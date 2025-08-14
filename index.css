@@ -1,0 +1,176 @@
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.live{
+    color:blue;
+}
+.image1{
+    height: 20vh;
+    width: 30vh;
+    border-radius: 12px;
+}
+.image2{
+    height: 60vh;
+    width: 100%;
+    align-items: center;
+    background-size: cover;
+}
+.border{
+    border-style: outset;
+}
+.heading{
+    text-align: left;
+    text-decoration:underline;
+    text-decoration-color: blue;
+}
+.special{
+    color:green;
+}
+.stars{
+    color:green;
+
+}
+
+.products{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+.image7{
+    height: 40vh;
+    width: 20vw;
+}
+.heading1{
+    text-decoration:underline;
+    text-decoration-color:red;
+    text-align: center;
+
+}
+.specials{
+    font-weight: bold;
+    color: green;
+}
+.para{
+    font-weight: bold;
+}
+.bg-container{
+    background-image: url('https://images.meesho.com/images/marketing/1746425994914.webp');
+    height: 60vh;
+    width: 100%;
+    background-size: cover;
+}
+.heading5{
+    color:white;
+    font-family: 'roboto';
+    font-size: 30px;
+}
+.button{
+    border-radius: 12px;
+   
+    color:black;
+    font-weight: bold;
+    
+}
+.backcolor{
+    background-color: black;
+}
+.head{
+    color:white;
+    font-family: 'Roboto';
+    font-size: 30px;
+    text-align: center;
+    
+}
+.para1{
+    font-family: 'Roboto';
+    color:white;
+    text-align: center;
+    
+}
+.back{
+    color:rgb(235, 218, 218);
+}
+.contact-text{
+    display: inline-flex;
+    
+    align-items:baseline;
+    gap: 10px;
+}
+.fa-house{
+    font-size: 24px;
+    position: relative;
+    top: -3px;
+}
+.para6{
+    color:rgb(21, 111, 146);
+}
+.address-ext{
+    color: white;
+    margin: 2px;
+}
+.address-block{
+    margin-top: 10px;
+}
+.address-head{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.title{
+    color:rgb(7, 86, 117);
+    font-weight: bold;
+}
+.address-text{
+    margin: 2px;
+    color: white;
+}.bg{
+    background: linear-gradient(to right,rgb(158, 33, 75),rgb(161, 114, 27));
+}
+.head1{
+    text-decoration: underline;
+    text-decoration-color: blue;
+    color: white;
+    text-align: center;
+}
+.para0{
+    color:white;
+    text-align: center;
+
+}
+.head2{
+    text-align: center;
+    color: white;
+}
+.back6{
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+
+}
+.back1{
+    height:20vh;
+    width: 40vw;
+    color: white;
+}
+.salma{
+    background-color: rgb(106, 197, 170);
+    border-style:line;
+}
+.log{
+    text-align: center;
+    color: white;
+    justify-content: center;
+}
+.bu1{
+    border-radius: 8px;
+}
+
+.para5{
+    color:red;
+    font-family: 'Roboto';
+}

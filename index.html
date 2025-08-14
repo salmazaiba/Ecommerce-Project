@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <div>
+    
+    
+    <nav class="navbar navbar-light bg-light">
+      <img class="image1" src="data:image/jpeg;base64,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"/>
+        
+        
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<nav class="navbar">
+        <li class="live"><a href="#Recently Viewed">Home</a></li>
+        <li class="live"><a href="#Explore Our Collection">Explore Collection</a></li>
+        
+        <li class="live"><a href="#Contact">Contact Us</a></li>
+        <li class="live"><a href="#Known Us">About Us</a></li>
+        <li class="live"><a href="#login">Sign In</a></li>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </nav>
+  </div>
+   
+  
+  
+    <div class=" bg-container">
+      <div class="d-flex flex-row justify-content-end pt-5 mr-4">
+      <h1 class="heading5">Smart Shopping<br> Trusted By Millions </h1>
+      </div>
+      <div class="d-flex flex-row justify-content-end mr-4 pt-4">
+      <button class="button align-item:center;">Shop now</button>
+      </div>
+      
+      
+    </div>
+    <h1 class="heading pt-3" id="Recently Viewed">Recently Viewed Products</h1>
+    <div class='products pt-3'>
+      <div class="product">
+    <img class="image7" src="data:image/jpeg;base64,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"/>
+   
+    <p class="para">Rs/- 616<br>
+   <span class="special"><br>Rs/- 595 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.4</i>
+
+</div>
+    <div class='product'>
+    <img class="image7" src='https://images.meesho.com/images/products/69004735/glmff_512.avif?width=512'/>
+    
+    <p class="para">Rs/-1000<br>
+   <span class="special"><br>Rs/- 750 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+
+<div class='product'>
+    <img class="image7" src='https://images.meesho.com/images/products/543523857/cfd4g_512.avif?width=512'/>
+    
+    <p class="para">Rs/-650<br>
+   <span class="special"><br>Rs/- 543 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.7</i>
+</div>
+
+<div class='product'>
+    <img class="image7" src='https://images.meesho.com/images/products/424600827/cajhr_512.avif?width=512'/>
+    
+    <p class="para">Rs/-500<br>
+   <span class="special"><br>Rs/- 475 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.9</i>
+</div>
+</div>
+
+<div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/554965721/sq5np_512.avif?width=512'/>
+    
+    <p class="para">Rs/-490<br>
+   <span class="special"><br>Rs/- 376 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+
+<div class='product'>
+    <img class="image7" src='
+    https://images.meesho.com/images/products/560917408/kseur_512.avif?width=512'/>
+    
+    <p class="para">Rs/-300<br>
+   <span class="special"><br>Rs/- 290 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.2</i>
+</div>
+
+<div class='product'>
+    <img class="image7" src='https://images.meesho.com/images/products/148135589/zwfxs_512.avif?width=512'/>
+    
+    <p class="para">Rs/-418<br>
+   <span class="special"><br>Rs/- 365 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.2</i>
+</div>
+
+<div class='product'>
+    
+    <div class='product'>
+    <img class="image7" src='
+    https://images.meesho.com/images/products/497394397/7ujvo_512.avif?width=512'/>
+    
+    <p class="para">Rs/-500<br>
+   <span class="special"><br>Rs/- 445 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.8</i>
+</div>
+</div>
+</div>
+<div id="Explore Our Collection">
+<div>
+  <h1 class="heading1 pt-4">Explore Our Collection Related To Men</h1>
+  <div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='
+    https://images.meesho.com/images/products/336129967/g4sjd_512.avif?width=512'/>
+    
+    <p class="para">Rs/-300<br>
+   <span class="special"><br>Rs/- 267 with 1 Special Offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.8</i>
+</div>
+
+
+  <div class="product">
+    <img class="image7" src='
+    
+    https://images.meesho.com/images/products/488463196/3yqdu_512.avif?width=512'/>
+    
+    <p class="para">Rs/-500<br>
+   <span class="specials"><br>10% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.6</i>
+</div>
+
+
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/482259970/qwlyd_512.avif?width=360'/>
+    
+    <p class="para">Rs/-450<br>
+   <span class="specials"><br>25% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.8</i>
+</div>
+    
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/318102440/msfnx_512.avif?width=512'/>
+    
+    <p class="para">Rs/-454<br>
+   <span class="specials"><br>20% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+</div>
+<div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='
+    https://images.meesho.com/images/products/189359594/syeuu_512.avif?width=512'/>
+    
+    <p class="para">Rs/-200<br>
+   <span class="specials"><br>15% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.9</i>
+</div>
+
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/415242716/iuh7m_512.avif?width=512'/>
+    
+    <p class="para">Rs/-346<br>
+   <span class="special"><br>Rs/- 330 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/473307079/mese9_512.avif?width=512'/>
+    
+    <p class="para">Rs/-404<br>
+   <span class="special"><br>Rs/- 390 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.2</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/577183397/2kpfi_512.avif?width=512'/>
+    
+    <p class="para">Rs/-300<br>
+   <span class="special"><br>Rs/- 291 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.2</i>
+</div>
+</div>
+
+
+<div>
+  <h1 class="heading1 pt-4">Explore Our Collection Related Women</h1>
+  <div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/440385301/dg8j6_512.avif?width=512'/>
+    
+    <p class="para">Rs/-300<br><p style="text-decoration: line-through;">332</p>
+   <span class="specials">15% Off with 1 special offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.1</i>
+</div>
+
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/484866031/rd7yg_512.avif?width=512'/>
+  <p class="para">Rs/-500<br><p style="text-decoration: line-through;">560</p>
+   <span class="specials">10% OFF with 2 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+
+
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/471895046/4thbj_512.avif?width=512'/>
+    
+    <p class="para">Rs/-363<br>
+   <span class="specials"><br>25% OFF with 1 special offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.8</i>
+</div>
+    
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/570505379/ap8ka_512.avif?width=512'/>
+    
+    <p class="para">Rs/-454<br>
+   <span class="specials"><br>20% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+</div>
+<div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/404594437/xwvaj_512.avif?width=512'/>
+    
+    <p class="para">Rs/-399<br>
+   <span class="specials"><br>15% OFF with 2 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.9</i>
+</div>
+
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/475036716/uzej7_512.avif?width=512'/>
+    
+    <p class="para">Rs/-500<br>
+   <span class="special"><br>Rs/- 450 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.1</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/566704926/7tdqt_512.avif?width=512'/>
+    
+    <p class="para">Rs/-660<br>
+   <span class="special"><br>Rs/- 500 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.3</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/543001656/iltyp_512.avif?width=512'/>
+    
+    <p class="para">Rs/-700<br>
+   <span class="special"><br>Rs/-659 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.6</i>
+</div>
+</div>
+
+<div>
+  <h1 class="heading1 pt-4">Explore Our Jewellary Collection</h1>
+  <div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/81956872/5ixlp_512.avif?width=512'/>
+    
+    <p class="para">Rs/-300<br><p style="text-decoration: line-through;">332</p>
+   <span class="specials">15% Off with 1 special offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.1</i>
+</div>
+
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/535550413/xy5e9_512.avif?width=512'/>
+  <p class="para">Rs/-500<br><p style="text-decoration: line-through;">560</p>
+   <span class="specials">10% OFF with 2 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+
+
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/512791107/amtzx_512.avif?width=512'/>
+    
+    <p class="para">Rs/-363<br>
+   <span class="specials"><br>25% OFF with 1 special offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.8</i>
+</div>
+    
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/294244270/vqiml_512.avif?width=512'/>
+    
+    <p class="para">Rs/-454<br>
+   <span class="specials"><br>20% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+</div>
+<div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/169820086/pmthi_512.avif?width=512'/>
+    
+    <p class="para">Rs/-399<br>
+   <span class="specials"><br>15% OFF with 2 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.9</i>
+</div>
+
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/119946252/gklra_512.avif?width=512'/>
+    
+    <p class="para">Rs/-500<br>
+   <span class="special"><br>Rs/- 450 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.1</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/152398934/ynd5l_512.avif?width=512'/>
+    
+    <p class="para">Rs/-660<br>
+   <span class="special"><br>Rs/- 500 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.3</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/562812131/vm7zs_512.avif?width=512'/>
+    
+    <p class="para">Rs/-700<br>
+   <span class="special"><br>Rs/-659 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.6</i>
+</div>
+</div>
+
+
+
+<div>
+  <h1 class="heading1 pt-4">Explore Our FootWare Collection</h1>
+  <div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://5.imimg.com/data5/ANDROID/Default/2021/6/PW/HS/SY/18610050/product-jpeg-500x500.jpg'/>
+    
+    <p class="para">Rs/-500<br><p style="text-decoration: line-through;">332</p>
+   <span class="specials">15% Off </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.3</i>
+</div>
+
+
+  <div class="product">
+    <img class="image7" src='https://inc5shop.com/cdn/shop/products/600619_BEIGE_65d81c76-8df1-4184-ae10-ce341da675e6.jpg?v=1752825612'/>
+  <p class="para">Rs/-700<br><p style="text-decoration: line-through;">860</p>
+   <span class="specials">10% OFF with 1 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+
+
+
+  <div class="product">
+    <img class="image7" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14VdfmSxyHCME5zXEmm9O9gG5REvyzyZJb3lEpS9P60wOotbg-grKwUROi4WQmiQw6Ks&usqp=CAU'/>
+    
+    <p class="para">Rs/-800<br>
+   <span class="specials"><br>25% OFF with 1 special offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.7</i>
+</div>
+    
+
+  <div class="product">
+    <img class="image7" src='https://cdn.shopify.com/s/files/1/0590/7211/8979/files/natural_3_bfb7c26d-7d69-4bf0-a5a4-9763dd4218c8_480x480.jpg?v=1648539285'/>
+    
+    <p class="para">Rs/-590<br>
+   <span class="specials"><br>20% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+</div>
+<div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://www.walkaroo.in/cdn/shop/files/01_ce659ed4-8efb-4626-9b58-feff76d945b8.jpg?v=1753515807'/>
+    
+    <p class="para">Rs/-545<br>
+   <span class="specials"><br>15% OFF with 2 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.9</i>
+</div>
+
+<div class="product">
+    <img class="image7" src='https://5.imimg.com/data5/SELLER/Default/2024/9/449569059/UM/IF/MJ/62900882/whatsapp-image-2024-09-07-at-5-23-24-pm-1-500x500.jpg'/>
+    
+    <p class="para">Rs/-660<br>
+   <span class="special"><br>Rs/- 450 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.4</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://img.ltwebstatic.com/images3_spmp/2024/03/28/d4/17116132739dc6d20ee02be5bcc2cf159fce145f97_thumbnail_720x.jpg'/>
+    
+    <p class="para">Rs/-710<br>
+   <span class="special"><br>Rs/- 500 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.5</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://image.made-in-china.com/202f0j00YfSbwVOykmrG/2024-Three-Colors-Luxury-Fashion-Women-Girls-Shoes-Sandals-Elegant-Comfort-Lady-Woman-Shoe-Sandal-Summer-Footwear.webp'/>
+    
+    <p class="para">Rs/-760<br>
+   <span class="special"><br>Rs/-659 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+</div>
+
+
+
+<div>
+  <h1 class="heading1 pt-4">Explore Our HomeNeeds Collection</h1>
+  <div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRVsWxEfikBesYFm6_xxczfH_oCTejOrx-vQ&s'/>
+    
+    <p class="para">Rs/-600<br><p style="text-decoration: line-through;">332</p>
+   <span class="specials">10% Off </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.0</i>
+</div>
+
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/579437350/ahapn_512.avif?width=512'/>
+  <p class="para">Rs/-450<br><p style="text-decoration: line-through;">860</p>
+   <span class="specials">10% OFF with 1 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.7</i>
+</div>
+
+
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/561163741/kbocd_512.avif?width=512'/>
+    
+    <p class="para">Rs/-800<br>
+   <span class="specials"><br>25% OFF with 1 special offer</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.1</i>
+</div>
+    
+
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/535201467/p9bci_512.avif?width=512'/>
+    
+    <p class="para">Rs/-790<br>
+   <span class="specials"><br>20% OFF </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.4</i>
+</div>
+</div>
+<div class='products pt-3'>
+  <div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/31931497/600c9_512.avif?width=512'/>
+    
+    <p class="para">Rs/-500<br>
+   <span class="specials"><br>15% OFF with 2 special offers</span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">3.3</i>
+</div>
+
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/568361203/a8eqd_512.avif?width=512'/>
+    
+    <p class="para">Rs/-539<br>
+   <span class="special"><br>Rs/- 450 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.1</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/11959898/5bbba_512.avif?width=512'/>
+    
+    <p class="para">Rs/-540<br>
+   <span class="special"><br>Rs/- 500 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.4</i>
+</div>
+<div class="product">
+    <img class="image7" src='https://images.meesho.com/images/products/9029651/72c36_512.avif?width=512'/>
+    
+    <p class="para">Rs/-700<br>
+   <span class="special"><br>Rs/-659 with 1 Special Offer </span></p>
+   <p>Free Delivery</p>
+   <i class="fa-solid fa-star stars">4.5</i>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="backcolor pt-3">
+  <h1 class="head" id="Contact">Contact Us</h1>
+<p class="para1">A "Contact Us" section on a website typically includes contact information <br>and a form for users to get in touch. Essential elements include a phone number,<br> email address, and mailing address (if applicable). A contact form with fields<br> like name, email, and message is also common.<br> Some sites may also offer live chat or social media links. </p>
+<div class="address-block">
+  <div class="address-head">
+    <i class="fa-solid fa-house back"></i>
+    <span class="title">Address</span>
+    </div>
+    <p class="address-text">417325 compound Road,<br>Hyderbad</p>
+
+  </div>
+<div class="address-block mr-3">
+  <div class="address-head">
+    
+    <i class="fa-solid fa-phone-volume back"></i>
+    <span class="title">Phone</span>
+    </div>
+    <p class="address-text">567-0987-2345</p>
+
+  </div>
+
+  <div class="address-block mt-3">
+  <div class="address-head">
+    
+    <i class="fa-solid fa-envelope back"></i>
+    <span class="title">Email</span>
+    </div>
+    <p class="address-text">meshow1234@gmail.com</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="bg">
+<h1 class="head1" id="Known Us">About Us</h1>
+<p class="para0">An "About Us" page is a section on a website that tells visitors<br> about the company, its mission, values, and history, aiming to build trust and credibility</p>
+<h1 class="head2">Follow Us</h1>
+<div class="logo">
+<i class="fa-brands fa-youtube back1 "></i>
+<i class="fa-brands fa-linkedin back1"></i>
+<i class="fa-brands fa-twitter back1"></i>
+<i class="fa-brands fa-telegram back1"></i>
+</div>
+</div>
+
+
+<div class="salma d-flex flex-row justify-content-center pt-4">
+<form id="myfrom">
+  <h1 class="log" id="login">Sign In</h1>
+  <label>Name</label><br>
+  <input type="text" id="name"/><br>
+  <p class="para5" id="ErrorMsg"></p>
+  <label>Phone</label><br>
+  <input type="number" id="phone"/><br>
+  <p class="para5" id="phoneError"></p>
+  <label>Email Id</label><br>
+  <input type="email" id="email"/><br>
+  <p class="para5" id="mailError"></p>
+  <label>Password</label><br>
+  <input type="password" id="passward"/><br>
+  <p class="para5" id="passwardError"></p>
+  <a href="ForGot Password?">ForGot Password?</a><br>
+  <button class="bu1 btn btn-primary">Sign In</button>
+</form>
+</div>
+<script src="index.js"></script>
+
+</body>
+</html>
